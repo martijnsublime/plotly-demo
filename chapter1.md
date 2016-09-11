@@ -95,8 +95,7 @@ Let's start with the first graph, a line plot!
 
 
 *** =hint
-
-
+- This is just a MVP. Request the solution
 
 *** =pre_exercise_code
 ```{r}
@@ -162,6 +161,7 @@ Let's create a choropleth map using the `states` and `state_values` objects avai
 
 
 *** =hint
+- This is just a MVP. Request the solution
 
 *** =pre_exercise_code
 ```{r}
