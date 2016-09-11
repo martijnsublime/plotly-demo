@@ -79,7 +79,7 @@ test_error()
 success_msg("Good work! You can plot and save in the cloud with 'plotly_POST()`.")
 ```
 
---- type:NormalExercise lang: xp: skills: key:37cdad4421
+--- type:NormalExercise lang:r xp:100 skills:1 key:37cdad4421
 ## A line plot
 
 In this exercise we will illustrate how to use Plotly to create a line plot. You've likely encountered this plot before and used them in your own research. Plotly let's you turn these basic plots into interactive masterpieces!
@@ -146,7 +146,7 @@ test_error()
 success_msg("Good work! Pay attention to the `type = ` and `mode = ` arguments and how they impact the output!")
 ```
 
---- type:NormalExercise lang: xp: skills: key:bb44bd3a1a
+--- type:NormalExercise lang:r xp:100 skills:1 key:bb44bd3a1a
 ## Building a choropleth map
 
 Now that you've mastered a basic line chart with `plotly` let's now see how DataCamp handles a more advanced visualization! 
