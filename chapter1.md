@@ -79,7 +79,7 @@ test_error()
 success_msg("Good work! You can plot and save in the cloud with 'plotly_POST()`.")
 ```
 
---- type:NormalExercise lang: xp: skills: key:f22563df0c
+--- type:NormalExercise lang: xp: skills: key:37cdad4421
 ## A line plot
 
 In this exercise we will illustrate how to use Plotly to create a line plot. You've likely encountered this plot before and used them in your own research. Plotly let's you turn these basic plots into interactive masterpieces!
@@ -147,7 +147,7 @@ test_error()
 success_msg("Good work! Pay attention to the `type = ` and `mode = ` arguments and how they impact the output!")
 ```
 
---- type:NormalExercise lang: xp: skills: key:f6a6f955df
+--- type:NormalExercise lang: xp: skills: key:91101518aa
 ## Building a choropleth map
 
 Now that you've mastered some of the basic charts with `plotly` we'll move into some more advanced visualizations! 
