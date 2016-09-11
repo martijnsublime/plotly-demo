@@ -79,7 +79,7 @@ test_error()
 success_msg("Good work! You can plot and save in the cloud with 'plotly_POST()`.")
 ```
 
---- type:NormalExercise lang: xp: skills: key:f22563df0c
+--- type:NormalExercise lang: xp: skills: key:e5bce93213
 ## Three basic plots
 
 In the next couple of exercises, you will learn how to use Plotly to create three basic plot types -  a line plot, a scatter plot, and a bar chart. You've likely encountered these plots before and used them in your own research. Plotly let's you turn these basic plots into interactive masterpieces!
