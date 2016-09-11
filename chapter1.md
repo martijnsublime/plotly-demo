@@ -80,9 +80,9 @@ success_msg("Good work! You can plot and save in the cloud with 'plotly_POST()`.
 ```
 
 --- type:NormalExercise lang: xp: skills: key:f22563df0c
-## Three basic plots
+## A line plot
 
-In the next couple of exercises, you will learn how to use Plotly to create three basic plot types -  a line plot, a scatter plot, and a bar chart. You've likely encountered these plots before and used them in your own research. Plotly let's you turn these basic plots into interactive masterpieces!
+In this exercise we will illustrate how to use Plotly to create a line plot. You've likely encountered this plot before and used them in your own research. Plotly let's you turn these basic plots into interactive masterpieces!
 
 To keep things simple, we've gone ahead and created two unique objects, `data1` and `data2`. These are available in the console. 
 
@@ -145,5 +145,57 @@ test_object("graph1")
 test_error()
 
 success_msg("Good work! Pay attention to the `type = ` and `mode = ` arguments and how they impact the output!")
+```
 
+--- type:NormalExercise lang: xp: skills: key:f6a6f955df
+## Building a choropleth map
+
+Now that you've mastered some of the basic charts with `plotly` we'll move into some more advanced visualizations! 
+
+Let's start with a choropleth map using the `states` and `state_values` objects available in the console. The `ploy_ly()` function is already partially filled in in the script to the right. Follow the instructions to fill in the arguments appropriately. 
+
+
+*** =instructions
+- The `type =` argument should be set to `"choropleth"` 
+- The `locations = ` argument should be set to the `states` object
+- The `locationmode =` argument should be set to `"USA-states"` 
+- The `z = ` argument should be set to the `state_values` object
+
+
+*** =hint
+
+*** =pre_exercise_code
+```{r}
+library(plotly)
+states <- c("AZ","CA","NY","TX")
+state_values <- c(10,20,40,30)
+
+```
+
+*** =sample_code
+```{r}
+# Follow the instructions to replace the blank spaces
+plot_ly(type= ___, locations = ___, locationmode = ___ ,
+        colorscale = "Viridis", z = ___) %>% layout(geo = list(scope = 'usa'))
+```
+
+*** =solution
+```{r}
+# Follow the instructions to replace the blank spaces
+plot_ly(type="choropleth", locations = states, locationmode="USA-states",
+        colorscale = "Viridis", z = state_values) %>% layout(geo = list(scope = 'usa'))
+```
+
+*** =sct
+```{r}
+test_function("plot_ly", args = "type")
+test_function("plot_ly", args = "locations")
+test_function("plot_ly", args = "locationmode")
+test_function("plot_ly", args = "colorscale")
+test_function("plot_ly", args = "z")
+test_function("layout", args = "geo")
+test_function("list", args = "scope")
+
+test_error()
+success_msg("Nice job! Let's try another advanced plot!")
 ```
