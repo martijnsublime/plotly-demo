@@ -146,7 +146,7 @@ test_error()
 success_msg("Good work! Pay attention to the `type = ` and `mode = ` arguments and how they impact the output!")
 ```
 
---- type:NormalExercise lang: xp: skills: key:dd52408894
+--- type:NormalExercise lang: xp: skills: key:4e091f6258
 ## Building a choropleth map
 
 Now that you've mastered a basic line chart with `plotly` let's now see how DataCamp handles a more advanced visualization! 
