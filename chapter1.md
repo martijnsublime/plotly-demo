@@ -1,116 +1,149 @@
 ---
-title       : Insert the chapter title here
-description : Insert the chapter description here
-attachments :
-  slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
+title       : Getting started with Plotly
+description : This chapter illustrates how Plotly will work within DataCamp. It will introduce you to plotly and how you can use R and plotly together to create stunning data visualizations. 
 
---- type:MultipleChoiceExercise lang:r xp:50 skills:1 key:b96d801aaa
-## A really bad movie
+--- type:NormalExercise lang:r xp:100 skills:1 key:cec50a4fcb
+## Let's get started
 
-Have a look at the plot that showed up in the viewer to the right. Which type of movie has the worst rating assigned to it?
+In this exercise, you'll be introduced to plotly and how you can use plotly to creating stunning data visualizations in R!
 
-*** =instructions
-- Adventure
-- Action
-- Animation
-- Comedy
+By default, plotly for R runs locally in your web browser or in the R Studio viewer. You can publish your charts to the web with plotly's web service. For more information go to [plot.ly/r/getting-started](https://plot.ly/r/getting-started)
 
-*** =hint
-Have a look at the plot. Which color does the point with the lowest rating have?
 
-*** =pre_exercise_code
-```{r}
-# The pre exercise code runs code to initialize the user's workspace.
-# You can use it to load packages, initialize datasets and draw a plot in the viewer
-
-movies <- read.csv("http://s3.amazonaws.com/assets.datacamp.com/course/introduction_to_r/movies.csv")
-
-library(ggplot2)
-
-ggplot(movies, aes(x = runtime, y = rating, col = genre)) + geom_point()
-```
-
-*** =sct
-```{r}
-# SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
-
-msg_bad <- "That is not correct!"
-msg_success <- "Exactly! There seems to be a very bad action movie in the dataset."
-test_mc(correct = 2, feedback_msgs = c(msg_bad, msg_success, msg_bad, msg_bad))
-```
-
---- type:NormalExercise lang:r xp:100 skills:1 key:a292939c7b
-## More movies
-
-In the previous exercise, you saw a dataset about movies. In this exercise, we'll have a look at yet another dataset about movies!
-
-A dataset with a selection of movies, `movie_selection`, is available in the workspace.
+Let's get started by loading the `plotly` library. 
 
 *** =instructions
-- Check out the structure of `movie_selection`.
-- Select movies with a rating of 5 or higher. Assign the result to `good_movies`.
-- Use `plot()` to  plot `good_movies$Run` on the x-axis, `good_movies$Rating` on the y-axis and set `col` to `good_movies$Genre`.
+- Load the `plotly` library
+- Use the `head()` function on `mtcars` to view the first few lines in the data.frame
+- Replace the blank spaces in the `plot_ly()` function to plot the weight, `wt`, of each car on the x-axis by the miles per gallon, `mpg`, on the y-axis. 
+
 
 *** =hint
-- Use `str()` for the first instruction.
-- For the second instruction, you should use `...[movie_selection$Rating >= 5, ]`.
-- For the plot, use `plot(x = ..., y = ..., col = ...)`.
+- Use the `library()` function
+- Simply enter `head(mtcars)`
+- Set `x=` in the `ploy_ly()` function to `mtcars$wt`
+
 
 *** =pre_exercise_code
 ```{r}
 # You can also prepare your dataset in a specific way in the pre exercise code
 
-library(MindOnStats)
-data(Movies)
-movie_selection <- Movies[Movies$Genre %in% c("action", "animated", "comedy"),c("Genre", "Rating", "Run")]
 
 # Clean up the environment
-rm(Movies)
+
 ```
 
 *** =sample_code
 ```{r}
-# movie_selection is available in your workspace
-
-# Check out the structure of movie_selection
+# load the `plotly` library
 
 
-# Select movies that have a rating of 5 or higher: good_movies
+# Use the `head()` function on `mtcars` 
 
 
-# Plot Run (i.e. run time) on the x axis, Rating on the y axis, and set the color using Genre
+# Use the `ploy_ly()` function to assign the correct value to `p`
+plot_ly(x = ___, y = ___, mode = "markers")
+
 
 ```
 
 *** =solution
 ```{r}
-# movie_selection is available in your workspace
+# load the `plotly` library
+library(plotly)
 
-# Check out the structure of movie_selection
-str(movie_selection)
+# Use the `head()` function on `mtcars` 
+head(mtcars)
 
-# Select movies that have a rating of 5 or higher: good_movies
-good_movies <- movie_selection[movie_selection$Rating >= 5, ]
+# Use the `ploy_ly()` function to assign the correct value to `p`
+plot_ly(x = mtcars$wt, y = mtcars$mpg,  mode = "markers")
 
-# Plot Run (i.e. run time) on the x axis, Rating on the y axis, and set the color using Genre
-plot(good_movies$Run, good_movies$Rating, col = good_movies$Genre)
+
 ```
 
 *** =sct
 ```{r}
 # SCT written with testwhat: https://github.com/datacamp/testwhat/wiki
 
-test_function("str", args = "object",
-              not_called_msg = "You didn't call `str()`!",
-              incorrect_msg = "You didn't call `str(object = ...)` with the correct argument, `object`.")
+test_function("head", args = "x",
+              not_called_msg = "You didn't call `head()`!",
+              incorrect_msg = "You didn't call `head()` with the correct object, `mtcars`.")
 
-test_object("good_movies")
 
-test_function("plot", args = "x")
-test_function("plot", args = "y")
-test_function("plot", args = "col")
+test_function("plot_ly", args = "x")
+test_function("plot_ly", args = "y")
+test_function("plot_ly", args = "mode")
 
 test_error()
 
-success_msg("Good work!")
+success_msg("Good work! You can plot and save in the cloud with 'plotly_POST()`.")
+```
+
+--- type:NormalExercise lang: xp: skills: key:f22563df0c
+## Three basic plots
+
+In the next couple of exercises, you will learn how to use Plotly to create three basic plot types -  a line plot, a scatter plot, and a bar chart. You've likely encountered these plots before and used them in your own research. Plotly let's you turn these basic plots into interactive masterpieces!
+
+To keep things simple, we've gone ahead and created two unique objects, `data1` and `data2`. These are available in the console. 
+
+Let's start with the first graph, a line plot!
+
+
+*** =instructions
+
+- Replace the blanks in the `plot_ly()` function to create a line plot where `data1` is on the x-axis and `data2` is on the y-axis. 
+
+
+*** =hint
+
+
+
+*** =pre_exercise_code
+```{r}
+library(plotly)
+
+# load data
+data1 <- c(1,2,3,4,5,6,7,8,9,10)
+data2 <- c(5,6,7,8,9,10,11,12,13,14)
+
+```
+
+
+*** =sample_code
+```{r}
+# Create a line plot with the `plot_ly()` function
+graph1 <- plot_ly(x= ___ ,y= ___ ,type="scatter", mode="lines") 
+
+# Print graph objects
+graph1
+
+
+
+```
+
+*** =solution
+```{r}
+# Create a line plot with the `plot_ly()` function
+graph1 <- plot_ly(x=data1,y=data2,type="scatter",mode="lines") 
+
+# Print graph objects
+graph1
+
+
+```
+
+*** =sct
+```{r}
+
+test_function("plot_ly", args = "x")
+test_function("plot_ly", args = "y")
+test_function("plot_ly", args = "type")
+test_function("plot_ly", args = "mode")
+
+test_object("graph1")
+
+test_error()
+
+success_msg("Good work! Pay attention to the `type = ` and `mode = ` arguments and how they impact the output!")
+
 ```
