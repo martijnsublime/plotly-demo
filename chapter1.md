@@ -150,9 +150,8 @@ success_msg("Good work! Pay attention to the `type = ` and `mode = ` arguments a
 --- type:NormalExercise lang: xp: skills: key:f6a6f955df
 ## Building a choropleth map
 
-Now that you've mastered some of the basic charts with `plotly` we'll move into some more advanced visualizations! 
-
-Let's start with a choropleth map using the `states` and `state_values` objects available in the console. The `ploy_ly()` function is already partially filled in in the script to the right. Follow the instructions to fill in the arguments appropriately. 
+Now that you've mastered a basic line chart with `plotly` let's now see how DataCamp handles a more advanced visualization! 
+Let's create a choropleth map using the `states` and `state_values` objects available in the console. The `ploy_ly()` function is already partially filled in in the script to the right. Follow the instructions to fill in the arguments appropriately. 
 
 
 *** =instructions
@@ -197,5 +196,5 @@ test_function("layout", args = "geo")
 test_function("list", args = "scope")
 
 test_error()
-success_msg("Nice job! Let's try another advanced plot!")
+success_msg("Nice job!")
 ```
