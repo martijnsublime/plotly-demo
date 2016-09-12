@@ -35,10 +35,10 @@ Let's get started by loading the `plotly` library.
 
 *** =sample_code
 ```{r}
-# load the `plotly` library
+# load the plotly library
 
 
-# Use the `head()` function on `mtcars` 
+# Use the head() function on `mtcars` 
 
 
 # Use the `ploy_ly()` function to assign the correct value to `p`
@@ -49,13 +49,13 @@ plot_ly(x = ___, y = ___, mode = "markers")
 
 *** =solution
 ```{r}
-# load the `plotly` library
+# load the plotly library
 library(plotly)
 
-# Use the `head()` function on `mtcars` 
+# Use the head() function on `mtcars` 
 head(mtcars)
 
-# Use the `ploy_ly()` function to assign the correct value to `p`
+# Use the ploy_ly() function to assign the correct value to `p`
 plot_ly(x = mtcars$wt, y = mtcars$mpg,  mode = "markers")
 
 
@@ -110,7 +110,7 @@ data2 <- c(5,6,7,8,9,10,11,12,13,14)
 
 *** =sample_code
 ```{r}
-# Create a line plot with the `plot_ly()` function
+# Create a line plot with the plot_ly() function
 graph1 <- plot_ly(x= ___ ,y= ___ ,type="scatter", mode="lines") 
 
 # Print graph objects
@@ -122,7 +122,7 @@ graph1
 
 *** =solution
 ```{r}
-# Create a line plot with the `plot_ly()` function
+# Create a line plot with the plot_ly() function
 graph1 <- plot_ly(x=data1,y=data2,type="scatter",mode="lines") 
 
 # Print graph objects
