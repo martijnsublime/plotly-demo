@@ -38,10 +38,10 @@ Let's get started by loading the `plotly` library.
 # load the plotly library
 
 
-# Use the head() function on `mtcars` 
+# Use the head() function on mtcars
 
 
-# Use the ploy_ly() function to assign the correct value to `p`
+# Use the ploy_ly() function to assign the correct value to p
 plot_ly(x = ___, y = ___, mode = "markers")
 
 
@@ -52,10 +52,10 @@ plot_ly(x = ___, y = ___, mode = "markers")
 # load the plotly library
 library(plotly)
 
-# Use the head() function on `mtcars` 
+# Use the head() function on mtcars
 head(mtcars)
 
-# Use the ploy_ly() function to assign the correct value to `p`
+# Use the ploy_ly() function to assign the correct value to p
 plot_ly(x = mtcars$wt, y = mtcars$mpg,  mode = "markers")
 
 
